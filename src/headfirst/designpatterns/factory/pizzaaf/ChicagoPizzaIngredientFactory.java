@@ -1,8 +1,6 @@
 package headfirst.designpatterns.factory.pizzaaf;
 
-public class ChicagoPizzaIngredientFactory 
-	implements PizzaIngredientFactory 
-{
+public class ChicagoPizzaIngredientFactory implements PizzaIngredientFactory {
 
 	public Dough createDough() {
 		return new ThickCrustDough();
