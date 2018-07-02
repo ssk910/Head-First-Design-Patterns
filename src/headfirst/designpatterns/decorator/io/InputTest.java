@@ -3,6 +3,7 @@ package headfirst.designpatterns.decorator.io;
 import java.io.*;
 
 public class InputTest {
+
 	public static void main(String[] args) throws IOException {
 		int c;
 
