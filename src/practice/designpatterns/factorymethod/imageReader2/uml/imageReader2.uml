@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>practice.designpatterns.factorymethod.imageReader2</OriginalElement>
+  <nodes>
+    <node x="168.0" y="230.0">practice.designpatterns.factorymethod.imageReader2.TestPattern</node>
+    <node x="0.0" y="80.0">practice.designpatterns.factorymethod.imageReader2.PNGReader</node>
+    <node x="0.0" y="230.0">practice.designpatterns.factorymethod.imageReader2.ReaderFactory</node>
+    <node x="59.75" y="0.0">practice.designpatterns.factorymethod.imageReader2.ImageReader</node>
+    <node x="69.0" y="145.0">practice.designpatterns.factorymethod.imageReader2.DecodedImage</node>
+    <node x="128.0" y="80.0">practice.designpatterns.factorymethod.imageReader2.BMPReader</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="practice.designpatterns.factorymethod.imageReader2.PNGReader" target="practice.designpatterns.factorymethod.imageReader2.ImageReader">
+      <point x="0.0" y="-15.0" />
+      <point x="54.0" y="55.0" />
+      <point x="89.0" y="55.0" />
+      <point x="-29.25" y="15.0" />
+    </edge>
+    <edge source="practice.designpatterns.factorymethod.imageReader2.BMPReader" target="practice.designpatterns.factorymethod.imageReader2.ImageReader">
+      <point x="0.0" y="-15.0" />
+      <point x="182.5" y="55.0" />
+      <point x="147.5" y="55.0" />
+      <point x="29.25" y="15.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="138.0" y="130.0" />
+  <SelectedNodes>
+    <node>practice.designpatterns.factorymethod.imageReader2.DecodedImage</node>
+  </SelectedNodes>
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
