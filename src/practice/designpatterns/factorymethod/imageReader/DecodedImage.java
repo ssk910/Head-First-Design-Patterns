@@ -1,4 +1,4 @@
-package practice.designpatterns.factorymethod;
+package practice.designpatterns.factorymethod.imageReader;
 
 public class DecodedImage {
     private String image;

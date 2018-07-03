@@ -1,4 +1,4 @@
-package practice.designpatterns.factorymethod;
+package practice.designpatterns.factorymethod.imageReader;
 
 public class TestPattern {
     public static void main(String[] args) {

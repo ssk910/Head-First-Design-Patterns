@@ -1,9 +1,9 @@
-package practice.designpatterns.factorymethod;
+package practice.designpatterns.factorymethod.imageReader;
 
-public class JpegReader implements ImageReader {
+public class GifReader implements ImageReader {
     private DecodedImage decodedImage;
 
-    public JpegReader(String image) {
+    public GifReader(String image) {
         this.decodedImage = new DecodedImage(image);
     }
 
