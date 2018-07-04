@@ -9,7 +9,12 @@ class ReaderFactory {
         } else if (format.equals(Extensions.PNG)) {
             return new PNGReader(imgFile);
         } else {
-            return null;
+            return new ImageReader() {
+                @Override
+                public DecodedImage getDecodedImage() {
+                    return new DecodedImage("nothing...");
+                }
+            };
         }
     }
 }

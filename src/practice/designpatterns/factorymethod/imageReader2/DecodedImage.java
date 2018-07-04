@@ -1,6 +1,6 @@
 package practice.designpatterns.factorymethod.imageReader2;
 
-public class DecodedImage {
+class DecodedImage {
     private String image;
 
     public DecodedImage(String image) {
@@ -9,6 +9,6 @@ public class DecodedImage {
 
     @Override
     public String toString() {
-        return "file decoded:" + image;
+        return "file decoded: " + image;
     }
 }
