@@ -1,8 +1,8 @@
 package practice.designpatterns.factorymethod.imageReader2;
 
-public class ReaderFactory {
+class ReaderFactory {
     ImageReader createReader(String imgFile) {
-        String format = imgFile.substring(imgFile.indexOf('.') + 1, (imgFile.length()));
+        String format = imgFile.substring(imgFile.indexOf('.') + 1, imgFile.length());
 
         if (format.equals("bmp")) {
             return new BMPReader(imgFile);
