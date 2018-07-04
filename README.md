@@ -1,5 +1,6 @@
-# Head First Design Patterns (written by Eric Freeman, Kathy Sierra, Bert Bates, Elisabeth Robson)
+<h1>Head First Design Patterns (written by Eric Freeman, Kathy Sierra, Bert Bates, Elisabeth Robson)</h1>
 
-It is forked project from <a hef="https://github.com/bethrobson/Head-First-Design-Patterns">bethrobson/Head-First-Design-Patterns</a>
+It is forked project from <a href="https://github.com/bethrobson/Head-First-Design-Patterns">bethrobson/Head-First-Design-Patterns</a>
 
-My customized example codes are at /src/practice
+
+My customized example codes are under the path: <a href="https://github.com/ssk910/Head-First-Design-Patterns/tree/master/src/practice/designpatterns">Head-First-Design-Patterns/src/practice/designpatterns/</a>
