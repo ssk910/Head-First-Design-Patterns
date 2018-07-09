@@ -40,7 +40,9 @@ public class TestPattern {
 
 
 //            System.out.println("\\");
-            System.out.println(TestPattern.class.getName().replaceAll("[.]", "\\\\"));
+            String str = TestPattern.class.getName().replaceAll("[.]", "\\\\");
+
+            System.out.println(str.substring(0, str.indexOf()));
 //            System.out.println(TestPattern.class.getResource(list.get(list.size() - 1) + ".class").getPath().toString());
 
 //            System.out.println(p4.toAbsolutePath().toString());
