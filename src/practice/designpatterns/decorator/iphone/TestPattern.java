@@ -27,9 +27,13 @@ public class TestPattern {
                 phone6.arrangeChipAndFeatures());
 
         /* iPhone 7 */
-        Phone phone7 = new PhoneSeven();
-        phone7 = new OSSix(phone7);
-        phone7 = new OSEight(phone7);
+        Phone phone7 = new OSSix(new OSEight(new PhoneSeven()));
+        /*
+         * Or like below...
+         * Phone phone7 = new PhoneSeven();
+         * phone7 = new OSSix(phone7);
+         * phone7 = new OSEight(phone7);
+        */
 
         System.out.printf(stringFormat, title1, phone7.getDeviceOs());
         System.out.printf(stringFormat + "\n", title2,
