@@ -12,6 +12,6 @@ package practice.designpatterns.factorymethod.ImageReaderNew;
 public class PNGDecodedImage extends DecodedImage {
     public PNGDecodedImage(String imageFile) {
         this.imageFile = imageFile;
-        this.format = "png";
+        this.format = Extensions.PNG;
     }
 }
