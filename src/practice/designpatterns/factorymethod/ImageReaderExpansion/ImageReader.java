@@ -1,5 +1,11 @@
 package practice.designpatterns.factorymethod.ImageReaderExpansion;
 
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+
 /**
  * "Concrete Creator"에 해당하는 클래스. "Creator"인 Reader 클래스를 상속하여
  * createDecodedImage() 메소드를 구현한다. 여기서 객체를 생성하는 역할을 한다.
@@ -16,14 +22,27 @@ public class ImageReader extends Reader {
      * @return 해당 포맷에 해당하는 DecodedImage 객체
      */
     @Override
-    DecodedImage createDecodedImage(String imageFile, String format) {
-        switch (format) {
-        case Extensions.BMP:
-            return new BMPDecodedImage(imageFile);
-        case Extensions.PNG:
-            return new PNGDecodedImage(imageFile);
-        default:
-            return null;
+    DecodedImage createDecodedImage(InputStream imageFile, String format) {
+        byte[] imageInByte = null;
+
+        try {
+            BufferedImage bufferedImage = ImageIO.read(imageFile);
+            ByteArrayOutputStream stream = new ByteArrayOutputStream();
+            ImageIO.write(bufferedImage, Extensions.BMP, stream);
+            stream.flush();
+            imageInByte = stream.toByteArray();
+            stream.close();
+        } catch (IOException e) {
+
+        } finally {
+            switch (format) {
+                case Extensions.BMP:
+                    return new BMPDecodedImage(imageInByte);
+                case Extensions.PNG:
+                    return new PNGDecodedImage(imageFile);
+                default:
+                    return null;
+            }
         }
     }
 }

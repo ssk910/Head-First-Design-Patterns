@@ -1,5 +1,7 @@
 package practice.designpatterns.factorymethod.ImageReaderExpansion;
 
+import java.io.InputStream;
+
 /**
  * "Concrete Product"에 해당하는 클래스. "Product"인 DecodedImage 클래스를 상속받는다.
  * "Concrete Product"는 "Creator"의 메소드에 의해 사용된다.
@@ -10,8 +12,15 @@ package practice.designpatterns.factorymethod.ImageReaderExpansion;
  * @author      Seokgyu Hwang
  */
 public class BMPDecodedImage extends DecodedImage {
+    public BMPDecodedImage(byte[] imageFile) {
+        this.imageFile = imageFile;
+        this.format = Extensions.BMP;
+    }
+
+    /*
     public BMPDecodedImage(String imageFile) {
         this.imageFile = imageFile;
         this.format = Extensions.BMP;
     }
+    */
 }

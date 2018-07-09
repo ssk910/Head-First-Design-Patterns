@@ -5,7 +5,9 @@
 
 package practice.designpatterns.factorymethod.ImageReaderExpansion;
 
-import java.io.File;
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
+import java.io.*;
 import java.net.URL;
 import java.nio.file.FileSystems;
 import java.nio.file.Path;
@@ -23,30 +25,38 @@ import java.util.List;
 public class TestPattern {
     public static void main(String[] args) {
         /* 이미지 파일 */
-        final String bmpFile = "imageFile.bmp";
+        final String bmpFile = "sample_bmp.bmp";
         final String pngFile = "imageFile.png";
-        final String gifFile = "imageFile.gif";
+        final String gifFile = "sample_gif.gif";
 
         Reader reader = new ImageReader();
 
         try {
 
-//            Path p4 = FileSystems.getDefault().getPath(".");
-            File file = new File("" + "src");
-            System.out.println(file.getAbsolutePath());
-//            String[] arr = TestPattern.class.getName().replaceAll("[.]", "\\").split("[.]");
-//            List<String> list = Arrays.asList(arr);
-//            list.get(list.size() - 1);
+            String classToPath = TestPattern.class.getName().replaceAll("[.]", "\\\\");
+            String packageDir = classToPath.substring(0, classToPath.lastIndexOf("\\"));
+            String imgDir = "src\\" + packageDir + "\\img\\";
+            String currentDir = (new File("" + imgDir)).getAbsolutePath();
+
+            System.out.println(currentDir);
+
+            File file = new File("" + imgDir + bmpFile);
+            ByteArrayOutputStream os = new ByteArrayOutputStream();
 
 
-//            System.out.println("\\");
-            String str = TestPattern.class.getName().replaceAll("[.]", "\\\\");
+            // read
+            BufferedImage bufferedImage = ImageIO.read(file);
+            InputStream is = new ByteArrayInputStream(os.toByteArray());
+//            InputStream is = new BufferedInputStream(new FileInputStream(file));
 
-            System.out.println(str.substring(0, str.indexOf()));
-//            System.out.println(TestPattern.class.getResource(list.get(list.size() - 1) + ".class").getPath().toString());
 
-//            System.out.println(p4.toAbsolutePath().toString());
-//            File file = new
+            ImageIO.read(is);
+            System.out.println(bufferedImage.getWidth() + "/" + bufferedImage.getHeight());
+
+            // write
+//            ImageIO.write(bufferedImage, "BMP", (new File("" + imgDir + "out.bmp")));
+            ImageIO.write(bufferedImage, "PNG", (new File("" + imgDir + "out.png")));
+
 
 //            BufferedImage bufferedImage = new BufferedImage(, BufferedImage.TYPE_INT_ARGB)
 
@@ -62,3 +72,30 @@ public class TestPattern {
         }
     }
 }
+
+
+/**
+ * memo..
+ *
+ * 이미지 파일을 읽어 byte array로 디코딩하여 리턴.
+ * writer도 생성해서 원하는 이미지 포맷으로 다시 인코딩하는 기능도 추가할 것.
+ *
+ * 참고
+ * How to convert BufferedImage to byte[] in Java?
+ * : https://www.mkyong.com/java/how-to-convert-bufferedimage-to-byte-in-java/
+ *
+ * How to convert BufferedImage to InputStream?
+ * : https://stackoverflow.com/questions/4251383/how-to-convert-bufferedimage-to-inputstream
+ *
+ * How to read an Image from a file, inputStream, or URL
+ * : https://www.java-tips.org/java-se-tips-100019/40-javax-imageio/1725-how-to-read-an-image-from-a-file-inputstream-or-url.html
+ *
+ * How to use Java 8 Encode (Decode) an Image to Base64
+ * : http://javasampleapproach.com/java/java-advanced/java-8-encode-decode-an-image-base64
+ *
+ * How to get image height and width using java?
+ * : https://stackoverflow.com/a/9083914/4284814
+ *
+ * How to read and write image file in Java
+ * : https://www.dyclassroom.com/image-processing-project/how-to-read-and-write-image-file-in-java
+ */
