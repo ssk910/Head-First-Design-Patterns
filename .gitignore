@@ -1,4 +1,11 @@
-# .idea
-/.idea
-
-/production
+*.iml
+*.ipr
+*.iws
+.DS_Store
+target
+*~
+.idea
+*.swp
+.classpath
+.project
+.settings
