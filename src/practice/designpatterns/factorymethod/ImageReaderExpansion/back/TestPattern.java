@@ -8,7 +8,6 @@ package practice.designpatterns.factorymethod.ImageReaderExpansion;
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.*;
-import java.io.Reader;
 import java.net.URL;
 import java.nio.file.FileSystems;
 import java.nio.file.Path;
@@ -27,7 +26,7 @@ public class TestPattern {
     public static void main(String[] args) {
         /* 이미지 파일 */
         final String bmpFile = "sample_bmp.bmp";
-        final String pngFile = "imageInByte.png";
+        final String pngFile = "imageFile.png";
         final String gifFile = "sample_gif.gif";
 
         Reader reader = new ImageReader();

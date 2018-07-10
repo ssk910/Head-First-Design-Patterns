@@ -12,22 +12,22 @@ import java.io.*;
  * @author      Seokgyu Hwang
  */
 abstract class Reader {
-    abstract DecodedImage createDecodedImage(InputStream inputStream, String format);
+    abstract DecodedImage createDecodedImage(InputStream imageFile, String format);
 
     /**
-     * 전달 받은 이미지 파일의 확장자로 포맷을 추찰하고, createEncodedImage()에
+     * 전달 받은 이미지 파일의 확장자로 포맷을 추찰하고, createDecodedImage()에
      * 이미지 파일과 포맷을 전달하여 디코드된 이미지를 리턴.
      *
-     * @param path : 이미지 파일.
+     * @param imageFile : 이미지 파일.
      * @return DecodedImage 객체.
      */
     public DecodedImage decodeImage(@Nullable String path, String fileName, String format) {
 //        String format;
 
-//        format = imageInByte.substring(imageInByte.indexOf('.') + 1, imageInByte.length());
+//        format = imageFile.substring(imageFile.indexOf('.') + 1, imageFile.length());
 
         return readImage(path, fileName, format);
-//        return createEncodedImage(imageInByte, format);
+//        return createDecodedImage(imageFile, format);
     }
 
     private DecodedImage readImage(String path, String fileName, String format) {
