@@ -8,16 +8,15 @@ package practice.designpatterns.factorymethod.ImageReaderExpansion;
  * @author      Seokgyu Hwang
  */
 abstract class DecodedImage {
-    //    String imageInByte;
-    byte[] imageInByte;    // 이미지 파일
-    String format;       // 이미지 파일의 포맷
+    byte[] imageInByte;    // 이미지 파일을 디코딩하여 byte 배열로 변환한 결과
+    String format;         // 이미지 파일의 포맷
 
     /**
-     * 여기서 디코드 작업을 수행하지만, 이 예제는 과정을 표현하는 예제이다.
+     * 변환된 byte 배열을 계속 이용하기 위해 리턴하는 메소드.
+     *
+     * @return 디코딩 된 이미지의 byte 배열
      */
-    public void decode() {
-        System.out.println("decoded imageInByte\t: [" + imageInByte + "]");
-        System.out.println("imageInByte format\t: [" + format + "]");
-        System.out.println("---------------------------------");
+    public byte[] getDecodedImageInByte() {
+        return imageInByte;
     }
 }

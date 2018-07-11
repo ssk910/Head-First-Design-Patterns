@@ -14,11 +14,4 @@ public class BMPDecodedImage extends DecodedImage {
         this.imageInByte = imageFile;
         this.format = Extensions.BMP;
     }
-
-    /*
-    public BMPDecodedImage(String imageInByte) {
-        this.imageInByte = imageInByte;
-        this.format = Extensions.BMP;
-    }
-    */
 }

@@ -10,7 +10,7 @@ package practice.designpatterns.factorymethod.ImageReaderExpansion;
  * @author      Seokgyu Hwang
  */
 public class PNGDecodedImage extends DecodedImage {
-    public PNGDecodedImage(String imageFile) {
+    public PNGDecodedImage(byte[] imageFile) {
         this.imageInByte = imageFile;
         this.format = Extensions.PNG;
     }
