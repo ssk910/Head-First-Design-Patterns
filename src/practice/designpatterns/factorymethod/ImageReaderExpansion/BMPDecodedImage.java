@@ -10,8 +10,8 @@ package practice.designpatterns.factorymethod.ImageReaderExpansion;
  * @author      Seokgyu Hwang
  */
 public class BMPDecodedImage extends DecodedImage {
-    public BMPDecodedImage(byte[] imageFile) {
-        this.imageInByte = imageFile;
+    public BMPDecodedImage(byte[] imageInByte) {
+        this.imageInByte = imageInByte;
         this.format = Extensions.BMP;
     }
 }

@@ -24,9 +24,10 @@ public class ImageWriter extends Writer {
         try {
             /* byte 배열을 읽어서 파일 생성 */
             BufferedImage bufferedImage = ImageIO.read(new ByteArrayInputStream(imageInByte));
-            System.out.println(ImageIO.write(bufferedImage, format, imageFile));
+            boolean b = ImageIO.write(bufferedImage, format, imageFile);
+            System.out.println(b);
 
-            // bmp로 생성하면 자꾸 false가 나옴... ?????
+            // png를 bmp로 생성하면 자꾸 false가 나옴... ?????
 
 
             /* 포맷에 맞는 "product" 객체를 생성 */
