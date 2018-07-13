@@ -19,13 +19,15 @@ public class ImageWriter extends Writer {
      */
     @Override
     EncodedImage createEncodedImage(File imageFile, byte[] imageInByte, String format) {
-        EncodedImage encodedImage = null; // 인코딩한 이미지 정보를 담고 있는 객체
+        EncodedImage encodedImage = null;    // 인코딩한 이미지 정보를 담고 있는 객체
 
         try {
             /* byte 배열을 읽어서 파일 생성 */
             BufferedImage bufferedImage = ImageIO.read(new ByteArrayInputStream(imageInByte));
             boolean b = ImageIO.write(bufferedImage, format, imageFile);
             System.out.println(b);
+            System.out.println(format);
+            System.out.println(imageFile.getAbsolutePath());
 
             // png를 bmp로 생성하면 자꾸 false가 나옴... ?????
 

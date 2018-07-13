@@ -24,8 +24,6 @@ public class TestPattern {
         final String bmpFile = "sample_bmp.bmp";
         final String pngFile = "sample_png.png";
         final String gifFile = "sample_gif.gif";
-        String fileToEncode = null;
-        String fileToDecode = null;
 
         /* 포맷 */
         String encodeFormat = null;

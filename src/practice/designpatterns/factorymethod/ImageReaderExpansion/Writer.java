@@ -49,9 +49,7 @@ abstract class Writer {
         try {
             logger.log(Level.INFO, "File format: " + format);
             file = new File("" + path + fileName + "." + format);
-        } catch (NullPointerException e) {
-            logger.log(Level.SEVERE, e.getMessage());
-            System.out.println("File not found.");
+            System.out.println(file.getAbsolutePath());
         } catch (Exception e) {
             logger.log(Level.SEVERE, e.getMessage());
             System.out.println("Error caused.");
